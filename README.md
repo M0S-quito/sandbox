@@ -26,7 +26,16 @@ gh auth status
 -> ***내가 작업 환경으로 사용할 root가 될 리포에서 진행***
 ```bash
 gh auth setup-git
-git config --global credential.helper
 ```
 - 첫번째 줄이 *.gitconfig*에 `helper = !gh auth git-credential`구문을 추가 시켜줌
-- 두번째 줄에서 `!gh auth git-credential` 이런 식으로 뜨면 성공!
+- 해봤는데 안된다면 *.gitconfig*에다가 직접 아래 구문 넣어 보기
+```.gitconfig
+[credential]
+  helper = !gh auth git-credential
+```
+
+##### 05. .gitignore로 프로젝트들이 작업 환경과 같이 git에 올라가지 않게 하기
+```.gitignore
+# projects
+리포 이름/
+```
