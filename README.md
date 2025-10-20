@@ -39,3 +39,10 @@ gh auth setup-git
 # projects
 리포 이름/
 ```
+
+##### 사용시 주의 사항!
+1. 재접 하면 `GITHUB_TOKEN`이 재발급 되기 때문에 지우고 다시 연결 해줘야함
+```bash
+unset GITHUB_TOKEN && gh auth setup-git
+```
+- 기존 토큰을 지우고 내가 만들어둔 PAT로 우선순위 변경
